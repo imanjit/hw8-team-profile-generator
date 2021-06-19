@@ -1,4 +1,14 @@
+.employee_card {
+    box-shadow: 2px 2px 4px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .team_header {
     background-color:teal;
     color: white;
+    padding: 20px;
+    text-align: center;
 }
