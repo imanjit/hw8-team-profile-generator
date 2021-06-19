@@ -2,11 +2,14 @@ const fs = require("fs");
 const path = require("path");
 const jest = require("jest");
 const inquirer = require("inquirer");
+const intern = require("./lib/intern");
+const manager = require("./lib/manager");
+const engineer = require("./lib/engineer")
 
-let intern = [];
-let manager = [];
-let engineer = [];
-let employees = {manager, engineer, intern};
+let internData = [];
+let managerData = [];
+let engineerData = [];
+let employeeData = {managerData, engineerData, internData};
 
 const teamQuestions = questions => {
     return inquirer.prompt([
@@ -46,7 +49,7 @@ const teamQuestions = questions => {
                     default: false,
                 }
             ]).then(({office, entry}) => {
-                manager.push(new Manager(employee, id, email, office))
+                managerData.push(new Manager(employee, id, email, office))
                 if (entry) {
                     teamQuestions();
                 }
@@ -65,7 +68,7 @@ const teamQuestions = questions => {
                     default: false,
                 }
             ]).then(({github, entry}) => {
-                engineer.push(new Engineer(employee, id, email, github))
+                engineerData.push(new Engineer(employee, id, email, github))
                 if (entry) {
                     teamQuestions();
                 }
@@ -84,7 +87,7 @@ const teamQuestions = questions => {
                     default: false,
                 }
             ]).then(({school, entry}) => {
-                intern.push(new Intern(employee, id, email, school))
+                internData.push(new Intern(employee, id, email, school))
                 if (entry) {
                     teamQuestions();
                 }
