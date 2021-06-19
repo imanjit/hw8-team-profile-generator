@@ -1,10 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 const jest = require("jest");
+
 const inquirer = require("inquirer");
 const intern = require("./lib/intern");
 const manager = require("./lib/manager");
-const engineer = require("./lib/engineer")
+const engineer = require("./lib/engineer");
+
+const write = require("./src/template");
+const template = require("./src/write");
 
 let internData = [];
 let managerData = [];
