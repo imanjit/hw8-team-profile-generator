@@ -1,14 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const jest = require("jest");
-
 const inquirer = require("inquirer");
-const intern = require("./lib/intern");
-const manager = require("./lib/manager");
-const engineer = require("./lib/engineer");
 
-const write = require("./src/write");
-const template = require("./src/template");
+const Intern = require("./lib/intern");
+const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Employee = require("./lib/employee");
+
+const write = require("./src/write.js");
+const template = require("./src/template.js");
 
 let internData = [];
 let managerData = [];
@@ -101,7 +102,7 @@ const teamQuestions = questions => {
 };
 
 teamQuestions().then(teamData => {
-    return template(employees)
+    return template(employeeData)
 }).then(html => {
     return write(html)
 });

@@ -83,3 +83,5 @@ module.exports = templateData => {
         </html>    
         `
 };
+
+module.exports = generate
