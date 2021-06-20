@@ -7,8 +7,8 @@ const intern = require("./lib/intern");
 const manager = require("./lib/manager");
 const engineer = require("./lib/engineer");
 
-const write = require("./src/template");
-const template = require("./src/write");
+const write = require("./src/write");
+const template = require("./src/template");
 
 let internData = [];
 let managerData = [];
@@ -98,4 +98,10 @@ const teamQuestions = questions => {
             })
         }
     })
-}
+};
+
+teamQuestions().then(teamData => {
+    return template(employees)
+}).then(html => {
+    return write(html)
+});
