@@ -1,6 +1,6 @@
 const generate = teamData => {
  
-    const manager = teamData.manager.map(function(data) {
+    const manager = teamData.managerData.map(function(data) {
         let managerHtml = `
         <div class="employee_card">
             <div class="card-header">
@@ -20,7 +20,7 @@ const generate = teamData => {
         return managerHtml
     });
 
-    const engineer = teamData.engineer.map(function(data) {
+    const engineer = teamData.engineerData.map(function(data) {
         let engineerHtml = `
         <div class="employee_card">
             <div class="card-header">
@@ -40,7 +40,7 @@ const generate = teamData => {
         return engineerHtml
     });
 
-    const intern = teamData.intern.map(function(data) {
+    const intern = teamData.internData.map(function(data) {
         let internHtml = `
         <div class="employee_card">
             <div class="card-header">
@@ -83,5 +83,3 @@ module.exports = templateData => {
         </html>    
         `
 };
-
-module.exports = generate

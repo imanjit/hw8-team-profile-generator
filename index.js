@@ -16,7 +16,7 @@ let managerData = [];
 let engineerData = [];
 let employeeData = {managerData, engineerData, internData};
 
-const teamQuestions = questions => {
+function questions() {
     return inquirer.prompt([
         {
             type: "text",
@@ -101,7 +101,7 @@ const teamQuestions = questions => {
     })
 };
 
-teamQuestions().then(teamData => {
+questions().then(data => {
     return template(employeeData)
 }).then(html => {
     return write(html)
