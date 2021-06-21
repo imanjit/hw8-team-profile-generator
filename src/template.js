@@ -2,7 +2,7 @@ const generate = teamData => {
  
     const manager = teamData.managerData.map(function(data) {
         let managerHtml = `
-        <div class="employee_card">
+        <div class="card">
             <div class="card-header">
                 <h3>${data.name}</h3>
                 <h4 style="font-style: italic;">Manager</h4>
@@ -22,7 +22,7 @@ const generate = teamData => {
 
     const engineer = teamData.engineerData.map(function(data) {
         let engineerHtml = `
-        <div class="employee_card">
+        <div class="card">
             <div class="card-header">
                 <h3>${data.name}</h3>
                 <h4 style="font-style: italic;">Engineer</h4>
@@ -42,7 +42,7 @@ const generate = teamData => {
 
     const intern = teamData.internData.map(function(data) {
         let internHtml = `
-        <div class="employee_card">
+        <div class="card">
             <div class="card-header">
                 <h3>${data.name}</h3>
                 <h4 style="font-style: italic;">Intern</h4>
@@ -62,7 +62,7 @@ const generate = teamData => {
     return [manager,engineer,intern]
 };
 
-module.exports = templateData => {
+module.exports = teamData => {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -75,10 +75,10 @@ module.exports = templateData => {
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
         </head>
         <body>
-            <header class="team_header container-fluid">
+            <header class="jumbotron text-center">
                 <h1>Team Profile</h1>
             </header>
-            ${generate(templateData)}
+            ${generate(teamData)}
         </body>
         </html>    
         `

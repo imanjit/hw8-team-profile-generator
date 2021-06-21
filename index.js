@@ -56,7 +56,7 @@ function questions() {
             ]).then(({office, entry}) => {
                 managerData.push(new Manager(employee, id, email, office))
                 if (entry) {
-                    teamQuestions();
+                    questions();
                 }
             })
         } else if (role === "Engineer") {
@@ -75,7 +75,7 @@ function questions() {
             ]).then(({github, entry}) => {
                 engineerData.push(new Engineer(employee, id, email, github))
                 if (entry) {
-                    teamQuestions();
+                    questions();
                 }
             })
         } else if (role === "Intern") {
@@ -94,7 +94,7 @@ function questions() {
             ]).then(({school, entry}) => {
                 internData.push(new Intern(employee, id, email, school))
                 if (entry) {
-                    teamQuestions();
+                    questions();
                 }
             })
         }
