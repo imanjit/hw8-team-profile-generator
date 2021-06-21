@@ -13,4 +13,4 @@ Create an application that generates employee profiles for a team.
 
 ## Future Improvements
 ---
-Fix styling of the index.html page that gets generated
+Have all employees appear on html page
