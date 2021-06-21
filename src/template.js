@@ -78,7 +78,14 @@ module.exports = teamData => {
             <header class="jumbotron text-center">
                 <h1>Team Profile</h1>
             </header>
+            
+            <main class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
             ${generate(teamData)}
+                    </div>
+                </div>
+            </main>
         </body>
         </html>    
         `
